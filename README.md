@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-The **Library Management System** is a web-based application that allows users to manage books, users, and transactions efficiently. It is built using **Spring Boot** for the backend and **Angular** for the frontend, with MySQL as the database.
+The **Library Management System** is a web-based application that allows users to manage books In Library efficiently. It is built using **Spring Boot** for the backend and **AngularJs** for the frontend, with MySQL as the database.
 
 ## Technologies Used
 
 - **Backend:** Spring Boot, Spring Data JPA, Lombook,Devtools etc.
-- **Frontend:** Angular, TypeScript, Bootstrap
+- **Frontend:** Angular, TypeScript, Bootstrap.
 - **Database:** MySQL
 - **Deployment:** Backend deployed using Docker and AWS EC2, Frontend deployed on Vercel
 
