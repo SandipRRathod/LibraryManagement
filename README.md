@@ -30,7 +30,7 @@ Ensure you have the following installed on your system:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/librarymanagement.git
+   [git clone https://github.com/librarymanagement.git](https://github.com/SandipRRathod/LibraryManagement.git)
    cd librarymanagement/Backend
    ```
 2. Configure the database in `application.properties`:
@@ -71,7 +71,7 @@ Ensure you have the following installed on your system:
 ### Frontend Deployment
 
 - The frontend is deployed on **Vercel** for seamless hosting and automatic deployments from GitHub.
-- Live site: [Library Management System](https://library-management-flax-three.vercel.app/books)
+- Live site: [Library Management System](https://library-management-flax-three.vercel.app/)
 
 ---
 
