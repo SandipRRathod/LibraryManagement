@@ -1,0 +1,55 @@
+
+<div class="hero-section container mt-4">
+    <div class="card p-4 shadow">
+      <h2 class="text-center">Search Books</h2>
+  
+      <div class="mb-3">
+        <label class="form-label">Search By:</label>
+        <select class="form-select" [(ngModel)]="searchType">
+            <option value="">Select Type</option>
+            <option value="id">Book-ID</option>
+          <option value="title">Book Title</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="searchValue"
+          placeholder="Enter Id,Book ID or Title"
+        />
+      </div>
+  
+      <button class="btn btn-primary w-100" (click)="searchBook()">Search</button>
+  
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+  
+      <div *ngIf="books" class="mt-4">
+        <h4>Book Details</h4>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Book ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{ book.id }}</td>
+              <td>{{ book.bookId }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{book.availabilityStatus}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

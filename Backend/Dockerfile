@@ -1,0 +1,12 @@
+FROM openjdk:19
+
+EXPOSE 3677
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file to the container
+COPY target/librarymanagement.jar app.jar
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]

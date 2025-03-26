@@ -1,0 +1,35 @@
+<div class="hero-section container mt-4">
+    <h2 class="text-center mb-4">Add a New Book</h2>
+    
+    <form (ngSubmit)="addBook()" class="card p-4 shadow">
+      <div class="mb-3">
+        <label class="form-label">Title:</label>
+        <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required />
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label">Book Id:</label>
+        <input type="text" class="form-control" [(ngModel)]="book.bookId" name="bookId" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Author:</label>
+        <input type="text" class="form-control" [(ngModel)]="book.author" name="author" required />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Genre:</label>
+        <input type="text" class="form-control" [(ngModel)]="book.genre" name="genre" required />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Availability:</label>
+        <select class="form-select" [(ngModel)]="book.availabilityStatus" name="availability">
+          <option value="Available">Available</option>
+          <option value="Checked Out">Checked Out</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary w-100">Add Book</button>
+    </form>
+  </div>
+  

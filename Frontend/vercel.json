@@ -1,0 +1,21 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/books",
+        "destination": "http://ec2-13-201-167-159.ap-south-1.compute.amazonaws.com/api/books"
+      },
+      {
+        "source": "/api/books/id/:bookId",
+        "destination": "http://ec2-13-201-167-159.ap-south-1.compute.amazonaws.com/api/books/id/:bookId"
+      },
+      {
+        "source": "/api/books/title/:bookTitle",
+        "destination": "http://ec2-13-201-167-159.ap-south-1.compute.amazonaws.com/api/books/title/:bookTitle"
+      },
+      {
+        "source": "/api/books/:id",
+        "destination": "http://ec2-13-201-167-159.ap-south-1.compute.amazonaws.com/api/books/:id"
+      }
+    ]
+  }
+  

@@ -1,0 +1,81 @@
+<div class="hero-section container mt-4">
+    <h2 class="text-center mb-4">Book List</h2>
+    
+    <table class="table table-striped shadow">
+      <thead class="table-dark">
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Availability</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.bookId }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.genre }}</td>
+          <td>
+            <span class="badge" [ngClass]="{'bg-success': book.availabilityStatus === 'Available', 'bg-danger': book.availabilityStatus === 'Checked Out'}">
+              {{ book.availabilityStatus }}
+            </span>
+          </td>
+          <td>
+            <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#actionModal" (click)="openModal(book,'Update')">Update</button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="modal"  data-bs-target="#actionModal" (click)="openModal(book,'Delete')" value="Delete">Delete</button>
+          </td>
+          
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="modal fade" id="actionModal" tabindex="-1" aria-labelledby="actionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ actionType }} Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="selectedBook">
+          <!-- <div class="mb-3">
+            <label class="form-label">ID:</label>
+            <input type="text" class="form-control" [(ngModel)]="selectedBook.id" [readonly]="actionType !== 'Update'" name="id">
+          </div> -->
+          <div class="mb-3">
+            <label class="form-label">Title:</label>
+            <input type="text" class="form-control" [(ngModel)]="selectedBook.title" [readonly]="actionType !== 'Update'" name="title">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Author:</label>
+            <input type="text" class="form-control" [(ngModel)]="selectedBook.author" [readonly]="actionType !== 'Update'" name="author">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Genre:</label>
+            <input type="text" class="form-control" [(ngModel)]="selectedBook.genre" [readonly]="actionType !== 'Update'" name="genre">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Availability:</label>
+            <select class="form-select" [(ngModel)]="selectedBook.availabilityStatus" [disabled]="actionType !== 'Update'" name="availability">
+              <option value="Available">Available</option>
+              <option value="Checked Out">Checked Out</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button *ngIf="actionType === 'Delete'" class="btn btn-danger" (click)="deleteBook()">Confirm Delete</button>
+        <button *ngIf="actionType === 'Update'" class="btn btn-primary" (click)="updateBook()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
